@@ -13,18 +13,31 @@ class DrawingCircle extends PaintFunction{
 
     }
     onDragging(coord,event){
-        this.contextDraft.fillStyle = "#f44";
 
+        this.contextDraft.fillStyle = "#f44";
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         this.contextDraft.beginPath();
-        this.contextDraft.arc(coord[0],coord[1],coord[0]- this.origX,0,2*Math.PI);
+        this.contextDraft.moveTo(this.origX,this.origY);
+        if((coord[0]- this.origX)>=0){ //drag right
+            var radius=Math.sqrt((coord[0]- this.origX)*(coord[0]- this.origX)+(coord[1]- this.origY)*(coord[1]- this.origY));
+            this.contextDraft.arc(this.origX,coord[1],radius,0,2*Math.PI);
+        }else{ //drag left
+            var radius=Math.sqrt((this.origX-coord[0])*(this.origX-coord[0])+(this.origY-coord[1])*(this.origY-coord[1]));
+            this.contextDraft.arc(this.origX,coord[1],radius,0,2*Math.PI);
+        }
         this.contextDraft.fill();
     }
 
     onMouseMove(){}
     onMouseUp(coord,event){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.contextReal.arc(coord[0],coord[1],coord[0]- this.origX,0,2*Math.PI);
+        if((coord[0]- this.origX)>=0){
+            var radius=Math.sqrt((coord[0]- this.origX)*(coord[0]- this.origX)+(coord[1]- this.origY)*(coord[1]- this.origY));
+            this.contextReal.arc(this.origX,coord[1],radius,0,2*Math.PI);
+        }else{
+            var radius=Math.sqrt((this.origX-coord[0])*(this.origX-coord[0])+(this.origY-coord[1])*(this.origY-coord[1]));
+            this.contextReal.arc(this.origX,coord[1],radius,0,2*Math.PI);
+        }
         this.contextReal.fill();
     }
     onMouseLeave(){}
