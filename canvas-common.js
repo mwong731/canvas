@@ -42,6 +42,7 @@ $('#canvas-draft').mouseenter(function(e){
     currentFunction.onMouseEnter([mouseX,mouseY],e);
 });
 
+
 class PaintFunction{
     constructor(){}
     onMouseDown(){}
