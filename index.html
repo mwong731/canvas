@@ -20,6 +20,8 @@
             <span class="btn btn-info fa fa-paint-brush" id="drawing-line" >Drawing Line</span>
             <span class="btn btn-danger fa fa-pen" id="drawing-straight" >Drawing Straight Line</span>
             <span class="btn btn-danger fa fa-pen" id="drawing-circle" >Drawing Circle</span>
+            <!--drag canvas-->
+            <span class="btn btn-danger fa fa-pen" id="drag-canvas" >Drag Canvas</span>
             <!--color button-->
             <input type="color" value="#ff0000" id="color">
             <!--stroke-->
@@ -35,6 +37,7 @@
         <script type='text/javascript' src="drawing-rectangle.js"></script>
         <script type='text/javascript' src="drawing-straight.js"></script>
         <script type='text/javascript' src="drawing-circle.js"></script>
+        <script type='text/javascript' src="drag-canvas.js"></script>
 
         <script type='text/javascript'>
             $('#drawing-rectangle').click(()=>{
@@ -48,6 +51,9 @@
             });
             $('#drawing-circle').click(()=>{
                 currentFunction = new DrawingCircle(contextReal,contextDraft);
+            });
+             $('#drag-canvas').click(()=>{
+                currentFunction = new DragCanvas(contextReal,contextDraft);
             });
             
         </script>
