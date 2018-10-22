@@ -47,9 +47,17 @@ $( "#color" ).change(function() {
     color=$(this).val();
   });
 
+//stroke change
+var stroke='';
+$( "#stroke" ).change(function() {
+    stroke=$(this).val();
+    $('#strokeNumber').val(stroke);
+  });
+
 class PaintFunction{
-    constructor(color){
+    constructor(color, stroke){
         this.color=color;
+        this.stroke=stroke;
     }
     onMouseDown(){}
     onDragging(){}

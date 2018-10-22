@@ -10,10 +10,10 @@ class DrawingStraight extends PaintFunction{
     onMouseDown(coord,event){
         this.context.strokeStyle = color;
         this.context.lineJoin = "round";
-        this.context.lineWidth = 5;
+        this.context.lineWidth = stroke;
         this.contextDraft.strokeStyle = color;
         this.contextDraft.lineJoin = "round";
-        this.contextDraft.lineWidth = 5;
+        this.contextDraft.lineWidth = stroke;
         this.context.beginPath();
         this.context.moveTo(coord[0],coord[1]);
         this.a=coord[0];
