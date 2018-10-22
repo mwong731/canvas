@@ -21,6 +21,7 @@
             <span class="btn btn-danger fa fa-pen" id="drawing-straight" >Drawing Straight Line</span>
             <span class="btn btn-danger fa fa-pen" id="drawing-circle" >Drawing Circle</span>
             <span class="btn btn-primary" id="black" >Black Color</span>
+            <span class="btn btn-info fa fa-paint-brush" id="drawing-background-color">Drawing Background Color</span>
         </div>
         <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
         <script type='text/javascript' src="canvas-common.js"></script>
@@ -28,6 +29,7 @@
         <script type='text/javascript' src="drawing-rectangle.js"></script>
         <script type='text/javascript' src="drawing-straight.js"></script>
         <script type='text/javascript' src="drawing-circle.js"></script>
+        
 
         <script type='text/javascript'>
             $('#black').click(()=>{
@@ -45,7 +47,11 @@
             $('#drawing-circle').click(()=>{
                 currentFunction = new DrawingCircle(contextReal,contextDraft);
             });
-            
+
+            $('#drawing-background-color').click(()=>{
+                var color = $("#color-picker").val();
+                $( '.canvas' ).css( "background-color", color);
+            });
         </script>
     </body>
 </html>
