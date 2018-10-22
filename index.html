@@ -20,7 +20,8 @@
             <span class="btn btn-info fa fa-paint-brush" id="drawing-line" >Drawing Line</span>
             <span class="btn btn-danger fa fa-pen" id="drawing-straight" >Drawing Straight Line</span>
             <span class="btn btn-danger fa fa-pen" id="drawing-circle" >Drawing Circle</span>
-            <span class="btn btn-primary" id="black" >Black Color</span>
+            <!--color button-->
+            <input type="color" value="#ff0000" id="color">
         </div>
         <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
         <script type='text/javascript' src="canvas-common.js"></script>
@@ -30,9 +31,6 @@
         <script type='text/javascript' src="drawing-circle.js"></script>
 
         <script type='text/javascript'>
-            $('#black').click(()=>{
-                color="#000000";
-            });
             $('#drawing-rectangle').click(()=>{
                 currentFunction = new DrawingRectangle(contextReal,contextDraft,color);
             });

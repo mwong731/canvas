@@ -6,15 +6,14 @@ class DrawingCircle extends PaintFunction{
     }
     
     onMouseDown(coord,event){
-        this.contextReal.fillStyle = "#f44";
+        this.contextReal.fillStyle = color;
         this.origX = coord[0];
         this.origY = coord[1];
         this.contextReal.beginPath();
 
     }
     onDragging(coord,event){
-
-        this.contextDraft.fillStyle = "#f44";
+        this.contextDraft.fillStyle = color;
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         this.contextDraft.beginPath();
         this.contextDraft.moveTo(this.origX,this.origY);

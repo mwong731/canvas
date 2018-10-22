@@ -1,11 +1,11 @@
 class DrawingLine extends PaintFunction{
     constructor(contextReal){
         super();
-        this.context = contextReal;            
+        this.context = contextReal;          
     }
     
     onMouseDown(coord,event){
-        this.context.strokeStyle = "#df4b26";
+        this.context.strokeStyle = color;
         this.context.lineJoin = "round";
         this.context.lineWidth = 5;
         this.context.beginPath();

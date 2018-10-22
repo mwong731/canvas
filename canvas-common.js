@@ -4,7 +4,6 @@ let canvasDraft = document.getElementById('canvas-draft');
 let contextDraft = canvasDraft.getContext('2d');
 let currentFunction;
 let dragging = false;
-let color;
 
 $('#canvas-draft').mousedown(function(e){
     let mouseX = e.offsetX;
@@ -42,13 +41,21 @@ $('#canvas-draft').mouseenter(function(e){
     currentFunction.onMouseEnter([mouseX,mouseY],e);
 });
 
+//color change
+var color='';
+$( "#color" ).change(function() {
+    color=$(this).val();
+  });
+
 class PaintFunction{
-    constructor(){}
+    constructor(color){
+        this.color=color;
+    }
     onMouseDown(){}
     onDragging(){}
     onMouseMove(){}
     onMouseUp(){}
     onMouseLeave(){}
     onMouseEnter(){}
-    
+
 }  
