@@ -10,6 +10,7 @@ $('#canvas-draft').mousedown(function(e){
     let mouseY = e.offsetY;
     currentFunction.onMouseDown([mouseX,mouseY],e);
     dragging = true;
+    newUndoEventListener()
 });
 
 $('#canvas-draft').mousemove(function(e){
@@ -28,6 +29,7 @@ $('#canvas-draft').mouseup(function(e){
     currentFunction.onMouseUp([mouseX,mouseY],e);
     let capImg = document.getElementById("zoomImg")
     capImg.setAttribute('src', canvasReal.toDataURL("image/png"))
+    captureUndo()
 });
 
 $('#canvas-draft').mouseleave(function(e){
@@ -69,33 +71,7 @@ $( "#opacity" ).change(function() {
     opacity=$(this).val();
     $('#opacityNumber').val(opacity);
   });
-
-function zoomIn(){   
-        contextReal.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        let capImg = document.getElementById("zoomImg")
-        contextReal.drawImage(capImg, 0, 0,canvasReal.width*1.2, canvasReal.height*1.2)
-        capImg.setAttribute('src', canvasReal.toDataURL("image/png"))   
-}
-function zoomOut(){   
-        contextReal.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        let capImg = document.getElementById("zoomImg")
-        contextReal.drawImage(capImg, 0, 0,canvasReal.width*0.8, canvasReal.height*0.8)
-        capImg.setAttribute('src', canvasReal.toDataURL("image/png"))   
-}
-
-function to_image() {   
-    let a = document.getElementById("dlImg");
-    a.setAttribute('download', "image.png")
-    a.setAttribute('href', canvasReal.toDataURL("image/png").replace("image/png", "image/octet-stream"));
-    a.click();          
-}
-
-function clear(){
-    contextReal.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-    contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-}
-
-
+  
 class PaintFunction{
     constructor(color, stroke){
         this.color=color;

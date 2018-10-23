@@ -39,6 +39,8 @@
         <span class="btn btn-primary" id="save">Save Image</span>
         <span class="btn btn-primary" id="zoomIn">Zoom In</span>
         <span class="btn btn-primary" id="zoomOut">Zoom Out</span>
+        <span class="btn btn-primary" id="undo">Undo</span>
+        <span class="btn btn-primary" id="redo">Redo</span>
         <div style="display:flex">
             <p>Stroke width</p>
             <input type="range" id="stroke" min="0" max="10" style="width:100px">
@@ -59,6 +61,8 @@
 
     </div>
     <img id="zoomImg">
+    <img id="undoImg">
+    <img id="redoImg">
     <a id="dlImg"></a>
     <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script type='text/javascript' src="./js/canvas-common.js"></script>
@@ -71,6 +75,7 @@
     <script type='text/javascript' src="./js/eraser.js"></script>
     <script type='text/javascript' src="./js/draw-polygon.js"></script>
     <script type='text/javascript' src="./js/spraypaint.js"></script>
+    <script type='text/javascript' src="./js/utility.js"></script>
 
     <script type='text/javascript'>
         $('#drawing-rectangle').click(() => {
@@ -103,6 +108,12 @@
         $('#zoomOut').click(() => zoomOut());
 
         $('#save').click(() => to_image());
+
+        $('#undo').click(() => undo());
+
+        $('#redo').click(() => redo());
+
+
 
         $('#polygon').click(()=>{
                 currentFunction = new DrawPolygon(contextReal,contextDraft);
