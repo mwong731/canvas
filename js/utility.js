@@ -1,15 +1,21 @@
+let capImg = document.getElementById("zoomImg")
+
 function zoomIn() {
     contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    let capImg = document.getElementById("zoomImg")
+    //let capImg = document.getElementById("zoomImg")
     contextReal.drawImage(capImg, 0, 0, canvasReal.width * 1.2, canvasReal.height * 1.2)
     capImg.setAttribute('src', canvasReal.toDataURL("image/png"))
+    captureUndo()
+    newUndoEventListener()
 }
 
 function zoomOut() {
     contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    let capImg = document.getElementById("zoomImg")
+    //let capImg = document.getElementById("zoomImg")
     contextReal.drawImage(capImg, 0, 0, canvasReal.width * 0.8, canvasReal.height * 0.8)
     capImg.setAttribute('src', canvasReal.toDataURL("image/png"))
+    captureUndo()
+    newUndoEventListener()
 }
 
 function to_image() {
@@ -53,6 +59,7 @@ function undo() {
         contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
         contextReal.globalAlpha = 1;
         contextReal.drawImage(uImg, 0, 0, canvasReal.width, canvasReal.height)
+        capImg.setAttribute('src', canvasReal.toDataURL("image/png"))
         undoCount--
         uImg.setAttribute('src', undoArr[undoCount - 1])
         rImg.setAttribute('src', undoArr[undoCount + 1])
@@ -61,6 +68,7 @@ function undo() {
         undoCount--
         contextReal.globalAlpha = 1;
         contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+        capImg.setAttribute('src', canvasReal.toDataURL("image/png"))
         rImg.setAttribute('src', undoArr[undoCount + 1])
         contextReal.globalAlpha = opacity;
     }
@@ -71,6 +79,7 @@ function redo() {
         contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
         contextReal.globalAlpha = 1;
         contextReal.drawImage(rImg, 0, 0, canvasReal.width, canvasReal.height)
+        capImg.setAttribute('src', canvasReal.toDataURL("image/png"))
         undoCount++
         contextReal.globalAlpha = opacity;
         if (undoCount < undoArr.length - 1) {
