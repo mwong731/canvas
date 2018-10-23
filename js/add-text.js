@@ -13,7 +13,7 @@ class AddText extends PaintFunction{
         this.arr.push(coord[1]);
         
         if(this.clicked==0){ //add text box
-            $('body').prepend(`<textarea id="addText" style="border:dotted 2px #000000; z-index:100; position:absolute; left:${coord[0]}px; top:${coord[1]}px; font-size:50px; color:${color}; background-color:transparent;">`);
+            $('body').prepend(`<textarea id="addText" style="border:dotted 2px #000000; z-index:100; position:absolute; left:${coord[0]}px; top:${coord[1]}px; font-size:50px; font-family:arial; color:${color}; background-color:transparent;">`);
             this.clicked=1;
         }else{ //place text
             var word=$('#addText').val();
@@ -22,7 +22,7 @@ class AddText extends PaintFunction{
             this.contextReal.font = '50px arial';
             this.contextReal.globalAlpha = opacity;
             this.contextReal.fillStyle = color;
-            this.contextReal.fillText(word,(this.arr[x]+4),(this.arr[y]+57));
+            this.contextReal.fillText(word,(this.arr[x]+4),(this.arr[y]+56));
             $('#addText').remove();
             this.clicked=0;
         }
