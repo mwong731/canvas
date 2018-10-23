@@ -51,22 +51,28 @@ function newUndoEventListener() {
 function undo() {
     if (undoCount > 0) {
         contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+        contextReal.globalAlpha = 1;
         contextReal.drawImage(uImg, 0, 0, canvasReal.width, canvasReal.height)
         undoCount--
         uImg.setAttribute('src', undoArr[undoCount - 1])
         rImg.setAttribute('src', undoArr[undoCount + 1])
+        contextReal.globalAlpha = opacity;
     } else if (undoCount == 0) {
         undoCount--
+        contextReal.globalAlpha = 1;
         contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
         rImg.setAttribute('src', undoArr[undoCount + 1])
+        contextReal.globalAlpha = opacity;
     }
 }
 
 function redo() {
     if (undoCount < undoArr.length - 1) {
         contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+        contextReal.globalAlpha = 1;
         contextReal.drawImage(rImg, 0, 0, canvasReal.width, canvasReal.height)
         undoCount++
+        contextReal.globalAlpha = opacity;
         if (undoCount < undoArr.length - 1) {
             rImg.setAttribute('src', undoArr[undoCount + 1])
         }
