@@ -19,6 +19,7 @@ class DragCanvas extends PaintFunction{
 
     onMouseMove(){}
     onMouseUp(){
+        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         $('#canvas-container').css('cursor','default')
     }
     onMouseLeave(){}
