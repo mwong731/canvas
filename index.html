@@ -32,6 +32,8 @@
         <input type="color" value="#ff0000" id="color">
         <!--polygon-->
         <span class="btn btn-danger fa fa-pen" id="polygon" >Polygon</span>
+        <!--spray paint-->
+        <span class="btn btn-danger fa fa-pen" id="spraypaint" >Spraypaint</span>
 
         <!--stroke-->
         <span class="btn btn-primary" id="save">Save Image</span>
@@ -67,11 +69,12 @@
     <script type='text/javascript' src="./js/drag-canvas.js"></script>
     <script type='text/javascript' src="./js/add-text.js"></script>
     <script type='text/javascript' src="./js/eraser.js"></script>
-    <script type='text/javascript' src="draw-polygon.js"></script>
+    <script type='text/javascript' src="./js/draw-polygon.js"></script>
+    <script type='text/javascript' src="./js/spraypaint.js"></script>
 
     <script type='text/javascript'>
         $('#drawing-rectangle').click(() => {
-            currentFunction = new DrawingRectangle(contextReal, contextDraft, color);
+            currentFunction = new DrawingRectangle(contextReal, contextDraft);
         });
         $('#drawing-line').click(() => {
             currentFunction = new DrawingLine(contextReal, contextDraft);
@@ -102,7 +105,11 @@
         $('#save').click(() => to_image());
 
         $('#polygon').click(()=>{
-                currentFunction = new DrawPolygon(contextReal,contextDraft,color);
+                currentFunction = new DrawPolygon(contextReal,contextDraft);
+            });
+
+        $('#spraypaint').click(()=>{
+                currentFunction = new Spray(contextReal,contextDraft);
             });
     </script>
 </body>
