@@ -76,6 +76,10 @@ function to_image() {
     a.click();          
 }
 
+function clear(){
+    contextReal.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+    contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+}
 
 
 class PaintFunction{

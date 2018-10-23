@@ -27,6 +27,7 @@
         <!--text button-->
         <span class="btn btn-danger fa fa-pen" id="add-text">Aa</span>
         <span class="btn btn-danger fa fa-pen" id="eraser">Eraser</span>
+        <span class="btn btn-danger fa fa-pen" id="clear">Clear</span>
         <!--color button-->
         <input type="color" value="#ff0000" id="color">
         <!--stroke-->
@@ -74,6 +75,8 @@
         $('#eraser').click(() => {
             currentFunction = new Eraser(contextReal, contextDraft);
         });
+
+        $('#clear').click(() => clear());
 
         $('#zoomIn').click(() => zoomIn());
 
