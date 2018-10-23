@@ -1,7 +1,7 @@
-class SprayPaint extends PaintFunction{
+class DrawingLine extends PaintFunction{
     constructor(contextReal){
         super();
-        this.contextReal = contextReal;          
+        this.context = contextReal;          
     }
     
     onMouseDown(coord,event){
