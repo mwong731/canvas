@@ -5,6 +5,7 @@ class DrawingLine extends PaintFunction{
     }
     
     onMouseDown(coord,event){
+        this.context.globalAlpha = opacity;
         this.context.strokeStyle = color;
         this.context.lineJoin = "round";
         this.context.lineWidth = stroke;

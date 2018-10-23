@@ -49,11 +49,25 @@ $( "#color" ).change(function() {
     color=$(this).val();
   });
 
+//background change
+var bgColor='';
+$( "#bgColor" ).change(function() {
+    bgColor=$(this).val();
+    $( "#canvas-real" ).css("background-color", `${bgColor}`)
+  });
+
 //stroke change
 var stroke='';
 $( "#stroke" ).change(function() {
     stroke=$(this).val();
     $('#strokeNumber').val(stroke);
+  });
+
+//opacity change
+var opacity= '1';
+$( "#opacity" ).change(function() {
+    opacity=$(this).val();
+    $('#opacityNumber').val(opacity);
   });
 
 function zoomIn(){   

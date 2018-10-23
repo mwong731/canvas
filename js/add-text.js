@@ -20,6 +20,7 @@ class AddText extends PaintFunction{
             var x=this.arr.length-4;
             var y=this.arr.length-3;
             this.contextReal.font = '50px arial';
+            this.contextReal.globalAlpha = opacity;
             this.contextReal.fillStyle = color;
             this.contextReal.fillText(word,(this.arr[x]+4),(this.arr[y]+57));
             $('#addText').remove();
