@@ -1,80 +1,110 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" 
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <link href="main.css" rel="stylesheet" type='text/css'>
-    </head>
-    <body>
-        <div class="row upperBar">
-            Undo Redo
-             <!--stroke-->
-             <div style="display:flex">
-                    <input type="range" id="stroke" min="0" max="10" style="width:100px"> 
-                    <input type="text" value="1" id="strokeNumber">
-                    </div>   
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <link href="./css/main.css" rel="stylesheet" type='text/css'>
+</head>
+
+<body>
+    <div id="canvas-container">
+        <canvas id="canvas-real" class="canvas" width='1280px' height='720px' style="border:1px dotted #000000;"></canvas>
+        <canvas id="canvas-draft" class="canvas" width='1280px' height='720px' style="border:1px dotted #00ff00;"></canvas>
+    </div>
+    <div class="buttons">
+        <span class="btn btn-primary fa fa-square" id="drawing-rectangle">Drawing Rectangle</span>
+        <span class="btn btn-info fa fa-paint-brush" id="drawing-line">Drawing Line</span>
+        <span class="btn btn-danger fa fa-pen" id="drawing-straight">Drawing Straight Line</span>
+        <span class="btn btn-danger fa fa-pen" id="drawing-circle">Drawing Circle</span>
+        <!--drag canvas-->
+        <span class="btn btn-danger fa fa-pen" id="drag-canvas">Drag Canvas</span>
+        <!--text button-->
+        <span class="btn btn-danger fa fa-pen" id="add-text">Aa</span>
+        <span class="btn btn-danger fa fa-pen" id="eraser">Eraser</span>
+        <span class="btn btn-danger fa fa-pen" id="clear">Clear</span>
+        <!--color button-->
+        <input type="color" value="#ff0000" id="color">
+        <!--polygon-->
+        <span class="btn btn-danger fa fa-pen" id="polygon" >Polygon</span>
+
+        <!--stroke-->
+        <span class="btn btn-primary" id="save">Save Image</span>
+        <span class="btn btn-primary" id="zoomIn">Zoom In</span>
+        <span class="btn btn-primary" id="zoomOut">Zoom Out</span>
+        <div style="display:flex">
+            <p>Stroke width</p>
+            <input type="range" id="stroke" min="0" max="10" style="width:100px">
+            <input type="text" value="1" id="strokeNumber" size="2">
         </div>
-        <div class="row canvasArea">
-            <div class="buttons">
-                <span class="btn btn-primary fa fa-square" id="drawing-rectangle" >Drawing Rectangle</span>
-                <span class="btn btn-info fa fa-paint-brush" id="drawing-line" >Drawing Line</span>
-                <span class="btn btn-danger fa fa-pen" id="drawing-straight" >Drawing Straight Line</span>
-                <span class="btn btn-danger fa fa-pen" id="drawing-circle" >Drawing Circle</span>
-                <!--drag canvas-->
-                <span class="btn btn-danger fa fa-pen" id="drag-canvas" >Drag Canvas</span>
-                <!--text button-->
-                <span class="btn btn-danger fa fa-pen" id="add-text" >Aa</span>
-                <!--color button-->
-                <input type="color" value="#ff0000" id="color">
-                <!--polygon-->
-                <span class="btn btn-danger fa fa-pen" id="polygon" >Polygon</span>
-
-
-            </div>
-
-            <div id="canvas-container">
-                    <canvas id="canvas-real" class="canvas" width='800px' height='600px' style="border:1px dotted #000000;"></canvas>
-                    <canvas id="canvas-draft" class="canvas" width='800px' height='600px' style="border:1px dotted #00ff00;"></canvas>
-            </div>
+        <div style="display:flex">
+            <p>Opacity</p>
+            <input type="range" id="opacity" min="0.1" step="0.1" max="1" style="width:100px">
+            <input type="text" value="1" id="opacityNumber" size="2">
         </div>
-        <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script type='text/javascript' src="canvas-common.js"></script>
-        <script type='text/javascript' src="drawing-line.js"></script>
-        <script type='text/javascript' src="drawing-rectangle.js"></script>
-        <script type='text/javascript' src="drawing-straight.js"></script>
-        <script type='text/javascript' src="drawing-circle.js"></script>
-        <script type='text/javascript' src="drag-canvas.js"></script>
-        <script type='text/javascript' src="add-text.js"></script>
-        <script type='text/javascript' src="draw-polygon.js"></script>
 
-        <script type='text/javascript'>
-            $('#drawing-rectangle').click(()=>{
-                currentFunction = new DrawingRectangle(contextReal,contextDraft,color);
-            });
-            $('#drawing-line').click(()=>{
-                currentFunction = new DrawingLine(contextReal,contextDraft);
-            });
-            $('#drawing-straight').click(()=>{
-                currentFunction = new DrawingStraight(contextReal,contextDraft);
-            });
-            $('#drawing-circle').click(()=>{
-                currentFunction = new DrawingCircle(contextReal,contextDraft);
-            });
-             $('#drag-canvas').click(()=>{
-                currentFunction = new DragCanvas(contextReal,contextDraft);
-            });
-            $('#add-text').click(()=>{
-                currentFunction = new AddText(contextReal,contextDraft);
-            });
-            $('#polygon').click(()=>{
+
+
+        <div>
+            <p>BG Color</p>
+            <input type="color" value="#ffffff" id="bgColor">
+        </div>
+
+    </div>
+    <img id="zoomImg">
+    <a id="dlImg"></a>
+    <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type='text/javascript' src="./js/canvas-common.js"></script>
+    <script type='text/javascript' src="./js/drawing-line.js"></script>
+    <script type='text/javascript' src="./js/drawing-rectangle.js"></script>
+    <script type='text/javascript' src="./js/drawing-straight.js"></script>
+    <script type='text/javascript' src="./js/drawing-circle.js"></script>
+    <script type='text/javascript' src="./js/drag-canvas.js"></script>
+    <script type='text/javascript' src="./js/add-text.js"></script>
+    <script type='text/javascript' src="./js/eraser.js"></script>
+    <script type='text/javascript' src="draw-polygon.js"></script>
+
+    <script type='text/javascript'>
+        $('#drawing-rectangle').click(() => {
+            currentFunction = new DrawingRectangle(contextReal, contextDraft, color);
+        });
+        $('#drawing-line').click(() => {
+            currentFunction = new DrawingLine(contextReal, contextDraft);
+        });
+        $('#drawing-straight').click(() => {
+            currentFunction = new DrawingStraight(contextReal, contextDraft);
+        });
+        $('#drawing-circle').click(() => {
+            currentFunction = new DrawingCircle(contextReal, contextDraft);
+        });
+        $('#drag-canvas').click(() => {
+            currentFunction = new DragCanvas(contextReal, contextDraft);
+        });
+        $('#add-text').click(() => {
+            currentFunction = new AddText(contextReal, contextDraft);
+        });
+
+        $('#eraser').click(() => {
+            currentFunction = new Eraser(contextReal, contextDraft);
+        });
+
+        $('#clear').click(() => clear());
+
+        $('#zoomIn').click(() => zoomIn());
+
+        $('#zoomOut').click(() => zoomOut());
+
+        $('#save').click(() => to_image());
+
+        $('#polygon').click(()=>{
                 currentFunction = new DrawPolygon(contextReal,contextDraft,color);
             });
-            
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>

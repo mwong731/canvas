@@ -14,11 +14,13 @@ class DragCanvas extends PaintFunction{
     onDragging(coord,event){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         this.contextDraft.putImageData(this.imageData, coord[0]-this.origX, coord[1]-this.origY);
+        this.contextReal.clearRect(0,0,canvasDraft.width,canvasDraft.height);    
         this.contextReal.putImageData(this.imageData, coord[0]-this.origX, coord[1]-this.origY);
     }
 
     onMouseMove(){}
     onMouseUp(){
+        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         $('#canvas-container').css('cursor','default')
     }
     onMouseLeave(){}
