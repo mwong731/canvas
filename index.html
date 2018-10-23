@@ -31,6 +31,9 @@
                 <span class="btn btn-danger fa fa-pen" id="add-text" >Aa</span>
                 <!--color button-->
                 <input type="color" value="#ff0000" id="color">
+                <!--polygon-->
+                <span class="btn btn-danger fa fa-pen" id="polygon" >Polygon</span>
+
 
             </div>
 
@@ -45,8 +48,9 @@
         <script type='text/javascript' src="drawing-rectangle.js"></script>
         <script type='text/javascript' src="drawing-straight.js"></script>
         <script type='text/javascript' src="drawing-circle.js"></script>
-        <script type='text/javascript' src="drag-canvas2.js"></script>
+        <script type='text/javascript' src="drag-canvas.js"></script>
         <script type='text/javascript' src="add-text.js"></script>
+        <script type='text/javascript' src="draw-polygon.js"></script>
 
         <script type='text/javascript'>
             $('#drawing-rectangle').click(()=>{
@@ -66,6 +70,9 @@
             });
             $('#add-text').click(()=>{
                 currentFunction = new AddText(contextReal,contextDraft);
+            });
+            $('#polygon').click(()=>{
+                currentFunction = new DrawPolygon(contextReal,contextDraft,color);
             });
             
         </script>
