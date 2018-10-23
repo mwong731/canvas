@@ -38,8 +38,8 @@ class DrawingCircle extends PaintFunction{
             var radius=Math.sqrt((this.origX-coord[0])*(this.origX-coord[0])+(this.origY-coord[1])*(this.origY-coord[1]));
             this.contextReal.arc(this.origX,coord[1],radius,0,2*Math.PI);
         }
-        this.contextReal.fill();
-    }
+        this.contextReal.fill();        
+    }        
     onMouseLeave(){}
     onMouseEnter(){}
 }
