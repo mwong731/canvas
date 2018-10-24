@@ -45,7 +45,7 @@ class AddText extends PaintFunction{
         $('#addText').remove();
 
         $('body').prepend(`<textarea id="addText"  style="border:dotted 2px #000000; z-index:100; position:absolute; left:${x}px; top:${y}px; font-size:50px; font-family:${fontStyle}; color:${color}; background-color:transparent;">${word}</textarea>`);
-        
+        //comment
       });
     }
 
