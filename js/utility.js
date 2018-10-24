@@ -28,6 +28,7 @@ function to_image() {
 function clear() {
     contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+    $('#addText').remove(); //clear textbox
     undoArr = []
     undoCount = -1
 }
