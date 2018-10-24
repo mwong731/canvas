@@ -7,6 +7,7 @@
         crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|Mali" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet" type='text/css'>
 </head>
 
@@ -19,7 +20,7 @@
     </header>
     <div class="container-fluid">
         <div class="row">
-            <div class="buttons col-3">
+            <div class="buttons col-4">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="d-flex flex-column col-6">
@@ -47,33 +48,32 @@
                         </div>
                         <div class="d-flex flex-column col-6">
                             <div>
-                                <span class="btn btn-outline-dark fa fa-square" id="drawing-rectangle">Drawing
-                                    Rectangle</span>
+                                <span class="btn btn-outline-dark" id="drawing-line">Pen</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark fa fa-paint-brush" id="drawing-line">Drawing Line</span>
-                            </div>
-                            <div>
-                                <span class="btn btn-outline-dark fa fa-pen" id="drawing-straight">Drawing Straight
+                                <span class="btn btn-outline-dark" id="drawing-straight">Straight
                                     Line</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark fa fa-pen" id="drawing-circle">Drawing Circle</span>
+                                <span class="btn btn-outline-dark" id="drawing-square">Square</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark fa fa-square" id="drawing-square">Drawing Square</span>
+                                <span class="btn btn-outline-dark" id="drawing-rectangle">Rectangle</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="polygon">Polygon</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="drawing-circle">Circle</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="spraypaint">Spraypaint</span>
                             </div>
                             <div>
                                 <span class="btn btn-outline-dark" id="add-text">Aa</span>
                             </div>
                             <div>
                                 <span class="btn btn-outline-dark" id="eraser">Eraser</span>
-                            </div>
-                            <div>
-                                <span class="btn btn-outline-dark" id="polygon">Polygon</span>
-                            </div>
-                            <div>
-                                <span class="btn btn-outline-dark" id="spraypaint">Spraypaint</span>
                             </div>
                         </div>
                     </div>
@@ -101,21 +101,23 @@
                     <p>BG Color</p>
                     <input type="color" value="#ffffff" id="bgColor">
                 </div>
+                <div>
+                    <select id="fontStyle">
+                        <option value="arial">Arial</option>
+                        <option value="Comic Sans MS">Comic Sans</option>
+                        <option value="courier">Courier</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-9">
+
+            <div class="col-8">
                 <div id="canvas-container">
                     <canvas id="canvas-real" class="canvas" width='800px' height='600px' style="border:1px dotted #000000;"></canvas>
                     <canvas id="canvas-draft" class="canvas" width='800px' height='600px' style="border:1px dotted #00ff00;"></canvas>
                 </div>
             </div>
         </div>
-        
-        <!--font style-->
-        <select id="fontStyle" >
-                <option value="arial">Arial</option >
-                <option value="Comic Sans MS">Comic Sans</option >
-                <option value="courier">Courier</option >
-        </select >
+
 
 
 
