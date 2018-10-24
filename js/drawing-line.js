@@ -23,6 +23,7 @@ class DrawingLine extends PaintFunction{
     onMouseEnter(){}
 
     draw(x,y){
+        this.context.lineCap = "round"
         this.context.lineTo(x,y);
         this.context.moveTo(x,y);
         this.context.closePath();
