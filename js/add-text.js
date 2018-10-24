@@ -36,13 +36,16 @@ class AddText extends PaintFunction{
     onMouseEnter(coord,event){
         var x=this.origX;
         var y=this.origY;
+
+        if(this.clicked==1){
         $( "#color,#fontStyle" ).change(function() {
 
         var word=$('#addText').val();
         $('#addText').remove();
         $('body').prepend(`<textarea id="addText"  style="border:dotted 2px #000000; z-index:100; position:absolute; left:${x}px; top:${y}px; font-size:50px; font-family:${fontStyle}; color:${color}; background-color:transparent;">${word}</textarea>`);
  
-      });
+             });
+         }
     }
 
 
