@@ -49,7 +49,9 @@ class AddText extends PaintFunction{
     onMouseMove(){}
     onMouseUp(){}
     onMouseLeave(){
-        
+        $( ".btn" ).click(function() {      
+            $('#addText').remove();   
+         });
     }
     onMouseEnter(coord,event){
         var x=this.origX;
