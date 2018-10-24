@@ -81,10 +81,6 @@
                     </div>
                 </div>
 
-
-
-
-
                 <div style="display:flex ">
                     <p>Stroke width</p>
                     <input type="range" id="stroke" min="0" max="10" style="width:100px">
@@ -120,19 +116,7 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
 
     <img id="zoomImg">
     <img id="undoImg">
@@ -196,11 +180,9 @@
 
         $('#redo').click(() => redo());
 
-
-
-        $('#polygon').click(() => {
-            currentFunction = new DrawPolygon(contextReal, contextDraft);
-        });
+        $('#polygon').click(()=>{
+                currentFunction = new DrawPolygon(contextReal,contextDraft);
+            });
 
         $('#spraypaint').click(() => {
             currentFunction = new Spray(contextReal, contextDraft);
