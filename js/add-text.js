@@ -4,7 +4,10 @@ class AddText extends PaintFunction{
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;     
         this.clicked=0;  
-        this.arr=[]   
+        this.arr=[];
+        this.textWidth=0;
+        this.textHeight=0;
+
     }
     
     
@@ -17,19 +20,18 @@ class AddText extends PaintFunction{
             this.arr.push(coord[1]);
 
             if(this.contextReal.canvas.width-coord[0]<300){ //check if the textbox will go beyond the canvas border x-axis
-                var textWidth=this.contextReal.canvas.width-coord[0];
+                this.textWidth=this.contextReal.canvas.width-coord[0];
             }else{
-                textWidth=300;
+                this.textWidth=300;
             }
 
-            if(this.contextReal.canvas.height-coord[1]<80){ //check if the textbox will go beyond the canvas border y-axis
-                var textHeight=this.contextReal.canvas.height-coord[1];
+            if(this.contextReal.canvas.height-coord[1]<100){ //check if the textbox will go beyond the canvas border y-axis
+                this.textHeight=this.contextReal.canvas.height-coord[1];
             }else{
-                textHeight=80;
+                this.textHeight=100;
             }
 
-
-            $('#canvas-container').prepend(`<textarea id="addText" style="border:dotted 2px #000000; z-index:100; position:absolute; left:${coord[0]}px; top:${coord[1]}px; font-size:50px; font-family:${fontStyle} ; color:${color}; background-color:transparent;width:${textWidth}px;height:${textHeight}px">`);
+            $('#canvas-container').prepend(`<textarea id="addText" style="border:dotted 2px #000000; z-index:100; position:absolute; left:${coord[0]}px; top:${coord[1]}px; font-size:50px; font-family:${fontStyle} ; color:${color}; background-color:transparent;width:${this.textWidth}px;height:${this.textHeight}px">`);
             this.clicked=1;
         }else{ //place text
             var word=$('#addText').val();
@@ -52,13 +54,16 @@ class AddText extends PaintFunction{
     onMouseEnter(coord,event){
         var x=this.origX;
         var y=this.origY;
+        var textWidth=this.textWidth;
+        var textHeight=this.textHeight;
+
 
         if(this.clicked==1){
         $( "#color,#fontStyle" ).change(function() {
 
         var word=$('#addText').val();
         $('#addText').remove();
-        $('#canvas-container').prepend(`<textarea id="addText"  style="border:dotted 2px #000000; z-index:100; position:absolute; left:${x}px; top:${y}px; font-size:50px; font-family:${fontStyle}; color:${color}; background-color:transparent;">${word}</textarea>`);
+        $('#canvas-container').prepend(`<textarea id="addText"  style="border:dotted 2px #000000; z-index:100; position:absolute; left:${x}px; top:${y}px; font-size:50px; font-family:${fontStyle}; color:${color}; background-color:transparent;width:${textWidth}px;height:${textHeight}px">${word}</textarea>`);
  
              });
          }
