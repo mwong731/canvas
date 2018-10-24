@@ -59,7 +59,7 @@ $( "#bgColor" ).change(function() {
   });
 
 //stroke change
-var stroke='';
+var stroke='1';
 $( "#stroke" ).change(function() {
     stroke=$(this).val();
     $('#strokeNumber').val(stroke);
