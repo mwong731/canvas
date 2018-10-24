@@ -81,3 +81,7 @@ body {
 #redoImg {
     display: none;
 }
+
+.btn, input{
+    margin-bottom:5px;
+}
