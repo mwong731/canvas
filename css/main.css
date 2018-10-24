@@ -52,7 +52,6 @@ body {
     background-color: #ffefe9;
 }
 
-
 #canvas-container {
     top: 0px;
     bottom: 0px;
@@ -69,7 +68,6 @@ body {
     z-index: 10;
 }
 
-
 #zoomImg {
     display: none;
 }
@@ -80,4 +78,8 @@ body {
 
 #redoImg {
     display: none;
+}
+
+.invertButtons {
+    filter: invert(100%);
 }

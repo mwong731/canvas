@@ -47,36 +47,31 @@
                         </div>
                         <div class="d-flex flex-column col-6">
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-line">Pencil<i class="fas fa-pencil-alt" style="margin: 6px;"></i></span>
+                                <span class="btn btn-outline-dark font-weight-bold buttonSelectedOn" id="drawing-line">Pencil<i class="fas fa-pencil-alt" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-straight">Straight
-                                    Line<i class="fas fa-slash" style="margin: 4px;"></i></span>
+                                <span class="btn btn-outline-dark font-weight-bold buttonSelectedOn" id="drawing-straight">Straight Line<i class="fas fa-slash" style="margin: 4px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-square">Square<i class="far fa-square" style="margin: 6px;"></i></span>
+                                <span class="btn btn-outline-dark font-weight-bold buttonSelectedOn" id="drawing-square">Square<i class="far fa-square" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-rectangle">Rectangle<i class="fas fa-vector-square" style="margin: 6px;"></i></span>
+                                <span class="btn btn-outline-dark font-weight-bold buttonSelectedOn" id="drawing-rectangle">Rectangle<i class="fas fa-vector-square" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="polygon">Polygon<i class="fas fa-draw-polygon" style="margin: 6px;"></i></span>
+                                <span class="btn btn-outline-dark font-weight-bold buttonSelectedOn" id="polygon">Polygon<i class="fas fa-draw-polygon" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-circle">Circle<i class="far fa-circle" style="margin: 6px;"></i></span>
+                                <span class="btn btn-outline-dark font-weight-bold buttonSelectedOn" id="drawing-circle">Circle<i class="far fa-circle" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="spraypaint">Spraypaint<i class="fas fa-spray-can" style="margin: 6px;"></i></span>
+                                <span class="btn btn-outline-dark font-weight-bold buttonSelectedOn" id="spraypaint">Spraypaint<i class="fas fa-spray-can" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-<<<<<<< HEAD
-                                <span class="btn btn-outline-dark font-weight-bold" id="add-text">Aa<i class="fas fa-font" style="margin: 6px;"></i></span>
-=======
-                                <span class="btn btn-outline-dark font-weight-bold" id="add-text">Text</span>
->>>>>>> melody
+                                <span class="btn btn-outline-dark font-weight-bold buttonSelectedOn" id="add-text">Aa<i class="fas fa-font" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="eraser">Eraser<i class="fas fa-eraser" style="margin: 6px;"></i></span>
+                                <span class="btn btn-outline-dark font-weight-bold buttonSelectedOn" id="eraser">Eraser<i class="fas fa-eraser" style="margin: 6px;"></i></span>
                             </div>
                             <br>
                             <br>
@@ -190,11 +185,47 @@
 
         $('#polygon').click(()=>{
                 currentFunction = new DrawPolygon(contextReal,contextDraft);
-            });
+        });
 
         $('#spraypaint').click(() => {
             currentFunction = new Spray(contextReal, contextDraft);
         });
+        
+        
+        $(".buttonSelectedOn").on("click", function(){
+
+            $('#drawing-square').css("background-color", "white");
+            $('#drawing-square').css("color", "black");
+
+            $('#eraser').css("background-color", "white");
+            $('#eraser').css("color", "black");
+
+            $('#add-text').css("background-color", "white");
+            $('#add-text').css("color", "black");
+
+            $('#drawing-circle').css("background-color", "white");
+            $('#drawing-circle').css("color", "black");
+
+            $('#drawing-line').css("background-color", "white");
+            $('#drawing-line').css("color", "black");
+
+            $('#drawing-straight').css("background-color", "white");
+            $('#drawing-straight').css("color", "black");
+
+            $('#drawing-rectangle').css("background-color", "white");
+            $('#drawing-rectangle').css("color", "black");
+
+            $('#spraypaint').css("background-color", "white");
+            $('#spraypaint').css("color", "black");
+
+            $('#polygon').css("background-color", "white");
+            $('#polygon').css("color", "black");
+
+            $(this).css("background-color", "black");
+            $(this).css("color", "white");
+
+        });
+
     </script>
 </body>
 
