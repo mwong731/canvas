@@ -8,6 +8,7 @@ body {
     background-size: cover;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    box-shadow: 5px 5px 5px #f38823;
 }
 
 .text-s {
@@ -80,6 +81,17 @@ body {
     display: none;
 }
 
+<<<<<<< HEAD
 .invertButtons {
     filter: invert(100%);
 }
+=======
+.btn, input{
+    margin-bottom:5px;
+}
+
+footer {
+    box-shadow: 0 50vh 0 50vh #3a3a3a;
+}
+
+>>>>>>> b22e29a008782454a8ab04587c19b1c81cfb9fb9

@@ -52,7 +52,7 @@ $( "#color" ).change(function() {
   });
 
 //background change
-var bgColor='';
+var bgColor='#ffefe9';
 $( "#bgColor" ).change(function() {
     bgColor=$(this).val();
     $( "#canvas-real" ).css("background-color", `${bgColor}`)
