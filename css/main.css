@@ -26,7 +26,7 @@ body {
 }
 
 .fBg{
-    background: #3a3a3a;
+    background: #3a3a3a; 
     color: #f5f4f4;
     border-top: 3px solid #a8a5a5;
 }
@@ -48,7 +48,7 @@ body {
 }
 
 #canvas-real {
-    background-color: #ffffff;
+    background-color: #ffefe9;
 }
 
 
