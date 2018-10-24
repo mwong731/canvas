@@ -58,7 +58,7 @@ class DrawPolygon extends PaintFunction{
             if(coord[0]>=(this.arr[x]-5)&&coord[0]<=(this.arr[x]+5)){
                 if(coord[1]>=(this.arr[y]-5)&&coord[1]<=(this.arr[y]+5)){
                 this.started=false
-                this.context.lineTo(coord[0],coord[1]);
+                this.context.lineTo(this.arr[x],this.arr[y]);
                 this.context.closePath();
                 this.context.stroke();
                 this.context.fill();  
