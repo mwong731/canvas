@@ -3,69 +3,131 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|Mali" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet" type='text/css'>
 </head>
 
 <body>
-    <div id="canvas-container">
-        <canvas id="canvas-real" class="canvas" width='1280px' height='720px' style="border:1px dotted #000000;"></canvas>
-        <canvas id="canvas-draft" class="canvas" width='1280px' height='720px' style="border:1px dotted #00ff00;"></canvas>
+
+    <header class="container-fluid justify-content-center text-center">
+        <div class="justify-content-center">
+            <h1 class="">Draw Board</h1>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="buttons col-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="d-flex flex-column col-6">
+                            <div>
+                                <span class="btn btn-outline-info" id="drag-canvas">Drag Canvas</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-info" id="zoomIn">Zoom In</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-info" id="zoomOut">Zoom Out</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-info" id="undo">Undo</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-info" id="redo">Redo</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-info" id="clear">Clear</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-info" id="save">Save Image</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div>
+                                <span class="btn btn-outline-dark" id="drawing-line">Pen</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="drawing-straight">Straight
+                                    Line</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="drawing-square">Square</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="drawing-rectangle">Rectangle</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="polygon">Polygon</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="drawing-circle">Circle</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="spraypaint">Spraypaint</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="add-text">Aa</span>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-dark" id="eraser">Eraser</span>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:flex ">
+                    <p>Stroke width</p>
+                    <input type="range" id="stroke" min="0" max="10" style="width:100px">
+                    <input type="text" value="1" id="strokeNumber" size="2">
+                </div>
+                <div style="display:flex ">
+                    <p>Opacity</p>
+                    <input type="range" id="opacity" min="0.1" step="0.1" max="1" style="width:100px">
+                    <input type="text" value="1" id="opacityNumber" size="2">
+                </div>
+                <div class="">
+                    <p class="d-inline">Color</p>
+                    <input class="d-inline" type="color" value="#ff0000" id="color">
+                </div>
+                <div class="">
+                    <p class="d-inline">BG Color</p>
+                    <input class="d-inline" type="color" value="#ffffff" id="bgColor">
+                </div>
+                <div>
+                    <p class="d-inline">Font</p>
+                    <select id="fontStyle" class="d-inline">
+                        <option value="arial">Arial</option>
+                        <option value="Comic Sans MS">Comic Sans</option>
+                        <option value="courier">Courier</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-8">
+                <div id="canvas-container">
+                    <canvas id="canvas-real" class="canvas" width='800px' height='600px' style="border:1px dotted #000000;"></canvas>
+                    <canvas id="canvas-draft" class="canvas" width='800px' height='600px' style="border:1px dotted #00ff00;"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="buttons">
-        <span class="btn btn-primary fa fa-square" id="drawing-rectangle">Drawing Rectangle</span>
-        <span class="btn btn-info fa fa-paint-brush" id="drawing-line">Drawing Line</span>
-        <span class="btn btn-danger fa fa-pen" id="drawing-straight">Drawing Straight Line</span>
-        <span class="btn btn-danger fa fa-pen" id="drawing-circle">Drawing Circle</span>
-        <span class="btn btn-info fa fa-paint-brush" id="drawing-square">Drawing Square</span>
-        <!--drag canvas-->
-        <span class="btn btn-danger fa fa-pen" id="drag-canvas">Drag Canvas</span>
-        <!--text button-->
-        <span class="btn btn-danger fa fa-pen" id="add-text">Aa</span>
-        <span class="btn btn-danger fa fa-pen" id="eraser">Eraser</span>
-        <span class="btn btn-danger fa fa-pen" id="clear">Clear</span>
-        <!--color button-->
-        <input type="color" value="#ff0000" id="color">
-        <!--polygon-->
-        <span class="btn btn-danger fa fa-pen" id="polygon" >Polygon</span>
-        <!--spray paint-->
-        <span class="btn btn-danger fa fa-pen" id="spraypaint" >Spraypaint</span>
 
-        <!--stroke-->
-        <span class="btn btn-primary" id="save">Save Image</span>
-        <span class="btn btn-primary" id="zoomIn">Zoom In</span>
-        <span class="btn btn-primary" id="zoomOut">Zoom Out</span>
-        <span class="btn btn-primary" id="undo">Undo</span>
-        <span class="btn btn-primary" id="redo">Redo</span>
-        <div style="display:flex">
-            <p>Stroke width</p>
-            <input type="range" id="stroke" min="0" max="10" style="width:100px">
-            <input type="text" value="1" id="strokeNumber" size="2">
-        </div>
-        <div style="display:flex">
-            <p>Opacity</p>
-            <input type="range" id="opacity" min="0.1" step="0.1" max="1" style="width:100px">
-            <input type="text" value="1" id="opacityNumber" size="2">
-        </div>
-
-
-
-        <div>
-            <p>BG Color</p>
-            <input type="color" value="#ffffff" id="bgColor">
-        </div>
-
-    </div>
     <img id="zoomImg">
     <img id="undoImg">
     <img id="redoImg">
     <a id="dlImg"></a>
-    <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script type='text/javascript' src="./js/canvas-common.js"></script>
     <script type='text/javascript' src="./js/drawing-line.js"></script>
     <script type='text/javascript' src="./js/drawing-rectangle.js"></script>
@@ -102,7 +164,7 @@
         $('#eraser').click(() => {
             currentFunction = new Eraser(contextReal, contextDraft);
         });
-        $('#drawing-square').click(()=>{
+        $('#drawing-square').click(() => {
             currentFunction = new DrawingSquare(contextReal, contextDraft);
         });
 
@@ -122,9 +184,9 @@
                 currentFunction = new DrawPolygon(contextReal,contextDraft);
             });
 
-        $('#spraypaint').click(()=>{
-                currentFunction = new Spray(contextReal,contextDraft);
-            });
+        $('#spraypaint').click(() => {
+            currentFunction = new Spray(contextReal, contextDraft);
+        });
     </script>
 </body>
 

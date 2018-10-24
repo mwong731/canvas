@@ -1,6 +1,12 @@
+body{
+    margin: 0px;
+    font-family: 'Gloria Hallelujah','Indie Flower','Mali', cursive;
+}
+
+
 .canvas{
     border:1px black dotted;
-    position:absolute;
+    position: absolute;
     top:0px;
     bottom:0px;
     left:0px;
@@ -13,18 +19,19 @@
 }
 
 #canvas-container{
-    height:720px;
-    width: 1280px;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height:600px;
+    width: 800px;
     border: solid green;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    
-
+  
 }  
 
 .buttons{
     position:relative;
-    z-index: 5;
+    z-index: 10;
 }
 
 

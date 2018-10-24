@@ -35,6 +35,7 @@ function clear() {
     $('#addText').remove(); //clear textbox
     undoArr = []
     undoCount = -1
+    capImg.setAttribute('src', "")
 }
 
 

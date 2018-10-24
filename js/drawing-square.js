@@ -6,6 +6,7 @@ class DrawingSquare extends PaintFunction {
     }
     
     onMouseDown(coord){
+        this.contextDraft.globalAlpha = opacity;
         this.contextReal.fillStyle = color;
         this.origX = coord[0];
         this.origY = coord[1];
@@ -14,17 +15,26 @@ class DrawingSquare extends PaintFunction {
         this.contextDraft.globalAlpha = opacity;
         this.contextDraft.fillStyle = color;
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.contextDraft.beginPath();
-        this.contextDraft.moveTo(this.origX, this.origY);
-        this.contextDraft.lineTo(coord[0],coord[1]);
-        let coord1 = coord[0] - this.origX;
-        this.contextDraft.fillRect(this.origX,this.origY, coord1, coord1);
+        let xWidth = coord[0] - this.origX;
+        let yHeight = coord[1] - this.origY
+        if (yHeight < 0){
+            yHeight = Math.abs(xWidth) * -1
+        }else{
+            yHeight = Math.abs(xWidth)
+        }
+        this.contextDraft.fillRect(this.origX,this.origY, xWidth, yHeight);
     }
     onMouseMove(){}
     onMouseUp(coord){
-        let coord2 = coord[0] - this.origX;
+        let xWidth = coord[0] - this.origX;
+        let yHeight = coord[1] - this.origY
+        if (yHeight < 0){
+            yHeight = Math.abs(xWidth) * -1
+        }else{
+            yHeight = Math.abs(xWidth)
+        }
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.contextReal.fillRect(this.origX,this.origY, coord2, coord2);
+        this.contextReal.fillRect(this.origX,this.origY, xWidth, yHeight);
     }
     onMouseLeave(){}
     onMouseEnter(){}
