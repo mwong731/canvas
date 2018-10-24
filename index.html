@@ -22,6 +22,7 @@
         <span class="btn btn-info fa fa-paint-brush" id="drawing-line">Drawing Line</span>
         <span class="btn btn-danger fa fa-pen" id="drawing-straight">Drawing Straight Line</span>
         <span class="btn btn-danger fa fa-pen" id="drawing-circle">Drawing Circle</span>
+        <span class="btn btn-info fa fa-paint-brush" id="drawing-square">Drawing Square</span>
         <!--drag canvas-->
         <span class="btn btn-danger fa fa-pen" id="drag-canvas">Drag Canvas</span>
         <!--text button-->
@@ -70,6 +71,7 @@
     <script type='text/javascript' src="./js/drawing-rectangle.js"></script>
     <script type='text/javascript' src="./js/drawing-straight.js"></script>
     <script type='text/javascript' src="./js/drawing-circle.js"></script>
+    <script type='text/javascript' src="./js/drawing-square.js"></script>
     <script type='text/javascript' src="./js/drag-canvas.js"></script>
     <script type='text/javascript' src="./js/add-text.js"></script>
     <script type='text/javascript' src="./js/eraser.js"></script>
@@ -99,6 +101,9 @@
 
         $('#eraser').click(() => {
             currentFunction = new Eraser(contextReal, contextDraft);
+        });
+        $('#drawing-square').click(()=>{
+            currentFunction = new DrawingSquare(contextReal, contextDraft);
         });
 
         $('#clear').click(() => clear());
