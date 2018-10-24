@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|Mali" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet" type='text/css'>
 </head>
@@ -15,7 +14,7 @@
 
     <header class="container-fluid justify-content-center text-center headPad hBg p-3">
         <div class="justify-content-center">
-            <h1 class="font-weight-bold text-light text-s">- Draw Board -</h1>
+            <h1 class="font-weight-bold text-light text-s">- Drawing Board -</h1>
         </div>
     </header>
     <div class="container-fluid mainBg">
@@ -25,55 +24,55 @@
                     <div class="row">
                         <div class="d-flex flex-column col-6">
                             <div>
-                                <span class="btn btn-outline-info font-weight-bold" id="drag-canvas">Drag Canvas</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="drag-canvas">Drag Canvas<i class="fas fa-expand-arrows-alt" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info font-weight-bold" id="zoomIn">Zoom In</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="zoomIn">Zoom In<i class="fas fa-search-plus" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info font-weight-bold" id="zoomOut">Zoom Out</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="zoomOut">Zoom Out<i class="fas fa-search-minus" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info font-weight-bold" id="undo">Undo</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="undo">Undo<i class="fas fa-undo-alt" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info font-weight-bold" id="redo">Redo</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="redo">Redo<i class="fas fa-redo-alt" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info font-weight-bold" id="clear">Clear</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="clear">Clear<i class="far fa-trash-alt" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info font-weight-bold" id="save">Save Image</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="save">Save Image<i class="far fa-save" style="margin: 6px;"></i></span>
                             </div>
                         </div>
                         <div class="d-flex flex-column col-6">
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-line">Pen</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-line">Pencil<i class="fas fa-pencil-alt" style="margin: 6px;"></i></span>
                             </div>
                             <div>
                                 <span class="btn btn-outline-dark font-weight-bold" id="drawing-straight">Straight
-                                    Line</span>
+                                    Line<i class="fas fa-slash" style="margin: 4px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-square">Square</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-square">Square<i class="far fa-square" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-rectangle">Rectangle</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-rectangle">Rectangle<i class="fas fa-vector-square" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="polygon">Polygon</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="polygon">Polygon<i class="fas fa-draw-polygon" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-circle">Circle</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-circle">Circle<i class="far fa-circle" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="spraypaint">Spraypaint</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="spraypaint">Spraypaint<i class="fas fa-spray-can" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="add-text">Aa</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="add-text">Aa<i class="fas fa-font" style="margin: 6px;"></i></span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark font-weight-bold" id="eraser">Eraser</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="eraser">Eraser<i class="fas fa-eraser" style="margin: 6px;"></i></span>
                             </div>
                             <br>
                             <br>
@@ -93,11 +92,11 @@
                 </div>
                 <div class="">
                     <p class="d-inline">Color</p>
-                    <input class="d-inline" type="color" value="#ff0000" id="color">
+                    <input class="d-inline" type="color" value="#000000" id="color">
                 </div>
                 <div class="">
                     <p class="d-inline">BG Color</p>
-                    <input class="d-inline" type="color" value="#ffffff" id="bgColor">
+                    <input class="d-inline" type="color" value="#ffefe9" id="bgColor">
                 </div>
                 <div>
                     <p class="d-inline">Font</p>
