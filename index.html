@@ -13,67 +13,67 @@
 
 <body>
 
-    <header class="container-fluid justify-content-center text-center">
+    <header class="container-fluid justify-content-center text-center headPad hBg p-3">
         <div class="justify-content-center">
-            <h1 class="">Draw Board</h1>
+            <h1 class="font-weight-bold text-light text-s">- Draw Board -</h1>
         </div>
     </header>
-    <div class="container-fluid">
+    <div class="container-fluid mainBg">
         <div class="row">
             <div class="buttons col-4">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="d-flex flex-column col-6">
                             <div>
-                                <span class="btn btn-outline-info" id="drag-canvas">Drag Canvas</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="drag-canvas">Drag Canvas</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info" id="zoomIn">Zoom In</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="zoomIn">Zoom In</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info" id="zoomOut">Zoom Out</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="zoomOut">Zoom Out</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info" id="undo">Undo</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="undo">Undo</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info" id="redo">Redo</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="redo">Redo</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info" id="clear">Clear</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="clear">Clear</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-info" id="save">Save Image</span>
+                                <span class="btn btn-outline-info font-weight-bold" id="save">Save Image</span>
                             </div>
                         </div>
                         <div class="d-flex flex-column col-6">
                             <div>
-                                <span class="btn btn-outline-dark" id="drawing-line">Pen</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-line">Pen</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark" id="drawing-straight">Straight
+                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-straight">Straight
                                     Line</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark" id="drawing-square">Square</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-square">Square</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark" id="drawing-rectangle">Rectangle</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-rectangle">Rectangle</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark" id="polygon">Polygon</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="polygon">Polygon</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark" id="drawing-circle">Circle</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="drawing-circle">Circle</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark" id="spraypaint">Spraypaint</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="spraypaint">Spraypaint</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark" id="add-text">Aa</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="add-text">Aa</span>
                             </div>
                             <div>
-                                <span class="btn btn-outline-dark" id="eraser">Eraser</span>
+                                <span class="btn btn-outline-dark font-weight-bold" id="eraser">Eraser</span>
                             </div>
                             <br>
                             <br>
@@ -109,10 +109,10 @@
                 </div>
             </div>
 
-            <div class="col-8">
+            <div class="col-8 d-flex justify-content-center">
                 <div id="canvas-container">
-                    <canvas id="canvas-real" class="canvas" width='800px' height='600px' style="border:1px dotted #000000;"></canvas>
-                    <canvas id="canvas-draft" class="canvas" width='800px' height='600px' style="border:1px dotted #00ff00;"></canvas>
+                    <canvas id="canvas-real" class="canvas" width='640px' height='480px'></canvas>
+                    <canvas id="canvas-draft" class="canvas" width='640px' height='480px'></canvas>
                 </div>
             </div>
         </div>
