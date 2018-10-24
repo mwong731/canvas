@@ -15,7 +15,21 @@ class AddText extends PaintFunction{
         if(this.clicked==0){ //add text box
             this.arr.push(coord[0]);
             this.arr.push(coord[1]);
-            $('#canvas-container').prepend(`<textarea id="addText" style="border:dotted 2px #000000; z-index:100; position:absolute; left:${coord[0]}px; top:${coord[1]}px; font-size:50px; font-family:${fontStyle} ; color:${color}; background-color:transparent;">`);
+
+            if(this.contextReal.canvas.width-coord[0]<300){ //check if the textbox will go beyond the canvas border x-axis
+                var textWidth=this.contextReal.canvas.width-coord[0];
+            }else{
+                textWidth=300;
+            }
+
+            if(this.contextReal.canvas.height-coord[1]<80){ //check if the textbox will go beyond the canvas border y-axis
+                var textHeight=this.contextReal.canvas.height-coord[1];
+            }else{
+                textHeight=80;
+            }
+
+
+            $('#canvas-container').prepend(`<textarea id="addText" style="border:dotted 2px #000000; z-index:100; position:absolute; left:${coord[0]}px; top:${coord[1]}px; font-size:50px; font-family:${fontStyle} ; color:${color}; background-color:transparent;width:${textWidth}px;height:${textHeight}px">`);
             this.clicked=1;
         }else{ //place text
             var word=$('#addText').val();
