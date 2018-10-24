@@ -4,28 +4,55 @@ body{
 }
 
 
+.text-s{
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: black;
+}
+
+.mainBg{
+    background: #f5f4f4;
+    background-size: cover;
+    padding-top: 15px;
+    
+}
+.hBg{
+    background-image: url(/img/h01.jpg);
+    background-size: cover;
+    
+    margin-bottom: 0px;
+    padding-bottom:0px; 
+}
+
 .canvas{
-    border:1px black dotted;
+    border:4px solid #805050;
     position: absolute;
     top:0px;
     bottom:0px;
     left:0px;
     right:0px;
     background-color: transparent;  
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px #888888;
 }
 
 #canvas-draft{
     background-color: transparent;
 }
 
+#canvas-real{
+    background-color:#ffffff;
+}
+
+
 #canvas-container{
     top:0px;
     bottom:0px;
     left:0px;
     right:0px;
-    height:600px;
-    width: 800px;
-    border: solid green;
+    height:480px;
+    width: 640px;
+    position: relative;
   
     
 
