@@ -37,6 +37,7 @@ class DrawingStraight extends PaintFunction{
     }
     onMouseUp(coord,event){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+        this.context.lineCap = "round"
         this.draw(coord[0],coord[1]);
     }
     onMouseLeave(){}
