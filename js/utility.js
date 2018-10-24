@@ -19,10 +19,14 @@ function zoomOut() {
 }
 
 function to_image() {
+    contextDraft.fillStyle = bgColor;
+    contextDraft.fillRect(0,0,canvasDraft.width, canvasDraft.height);
+    contextDraft.drawImage(capImg, 0, 0, canvasDraft.width, canvasDraft.height)
     let a = document.getElementById("dlImg");
     a.setAttribute('download', "image.png")
-    a.setAttribute('href', canvasReal.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+    a.setAttribute('href', canvasDraft.toDataURL("image/png").replace("image/png", "image/octet-stream"));
     a.click();
+    contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 }
 
 function clear() {
