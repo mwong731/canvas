@@ -1,3 +1,8 @@
+body{
+    margin: 0px;
+}
+
+
 .canvas{
     border:1px black dotted;
     position:absolute;
@@ -13,18 +18,17 @@
 }
 
 #canvas-container{
-    height:720px;
-    width: 1280px;
+    height:600px;
+    width: 800px;
     border: solid green;
-    overflow-x: hidden;
-    overflow-y: hidden;
+  
     
 
 }  
 
 .buttons{
     position:relative;
-    z-index: 5;
+    z-index: 10;
 }
 
 
