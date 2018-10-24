@@ -11,7 +11,6 @@ class AddText extends PaintFunction{
     onMouseDown(coord,event){
         this.origX = coord[0];
         this.origY = coord[1];
-        console.log("down"+this.origX,this.origY)
         
         if(this.clicked==0){ //add text box
             this.arr.push(coord[0]);
