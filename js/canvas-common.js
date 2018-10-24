@@ -71,11 +71,19 @@ $( "#opacity" ).change(function() {
     opacity=$(this).val();
     $('#opacityNumber').val(opacity);
   });
+
+//font style
+var fontStyle= '';
+$( "#fontStyle" ).change(function() {
+    fontStyle=$(this).val();
+    console.log(fontStyle);
+  });
   
 class PaintFunction{
     constructor(color, stroke){
         this.color=color;
         this.stroke=stroke;
+        this.fontStyle=fontStyle;
     }
     onMouseDown(){}
     onDragging(){}
