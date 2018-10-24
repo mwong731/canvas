@@ -44,3 +44,9 @@ class DrawingCircle extends PaintFunction{
     onMouseLeave(){}
     onMouseEnter(){}
 }
+
+//locally
+//git merge your matthew branch into local master
+//git add . /git commit -m 'on your master' --ensure you've done this on your matthew branch
+//then git pull from the online master branch
+//finally git push your local master to the online repository
