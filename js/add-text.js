@@ -32,7 +32,9 @@ class AddText extends PaintFunction{
     onDragging(){}
     onMouseMove(){}
     onMouseUp(){}
-    onMouseLeave(){}
+    onMouseLeave(){
+        
+    }
     onMouseEnter(coord,event){
         var x=this.origX;
         var y=this.origY;

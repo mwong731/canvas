@@ -73,7 +73,7 @@ $( "#opacity" ).change(function() {
   });
   
 //font change
-var fontStyle= '';
+var fontStyle= 'arial';
 $( "#fontStyle" ).change(function() {
     fontStyle=$(this).val();
   });
