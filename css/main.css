@@ -30,6 +30,7 @@ body {
     background: #3a3a3a; 
     color: #f5f4f4;
     border-top: 3px solid #a8a5a5;
+    box-shadow: 0 50vh 0 50vh #3a3a3a;
 }
 
 .canvas {
