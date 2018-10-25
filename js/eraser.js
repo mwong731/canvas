@@ -8,7 +8,7 @@ class Eraser extends PaintFunction {
         this.context.globalCompositeOperation="destination-out";
         this.context.strokeStyle = "rgba(255, 0, 0, 1)";
         this.context.lineJoin = "round";
-        this.context.lineWidth = 5;
+        this.context.lineWidth = stroke;
         this.context.beginPath();
         this.context.moveTo(coord[0],coord[1]);
         this.draw(coord[0],coord[1]);
